@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+$appName = basename( __FILE__ );
+
+include_once( __DIR__ . '/app/bootstrap.php' );
