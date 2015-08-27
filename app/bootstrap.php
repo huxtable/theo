@@ -25,7 +25,7 @@ foreach( $autoload as $module => $path )
 	}
 	else
 	{
-		$install = strtolower( readline( "{$config['name']}: Install missing dependencies [yes]? " ) );
+		$install = strtolower( readline( "{$appName}: Install missing dependencies [yes]? " ) );
 
 		switch ( $install )
 		{
@@ -33,7 +33,7 @@ foreach( $autoload as $module => $path )
 			case 'y':
 			case 'yes':
 				chdir( __DIR__ );
-				exec( 'git submodule update --init', $output, $exitCode );
+				exec( 'git submodule update --init --recursive', $output, $exitCode );
 				exit( $exitCode );
 				break;
 
